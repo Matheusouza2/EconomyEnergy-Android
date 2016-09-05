@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Economy Energy</string>
+
+    <string-array name="nomes_tabs">
+        <item>Consultas</item>
+        <item>Inicio</item>
+        <item>Ações</item>
+    </string-array>
+    <string name="title_activity_tela_tabs">TelaTabs</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/icone_app"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:text="Desenvolvido por"
+        android:textColor="#FF303F9F"
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/infopower_logo"
+        android:layout_marginBottom="170dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: infopower.tecnology@gmail.com"
+        android:textSize="17dp"/>
+</GridLayout>
