@@ -19,6 +19,7 @@
             android:name=".Activitys.TelaTabs"
             android:label="@string/title_activity_tela_tabs"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activitys.SettingsActivity"></activity>
     </application>
 
 </manifest>

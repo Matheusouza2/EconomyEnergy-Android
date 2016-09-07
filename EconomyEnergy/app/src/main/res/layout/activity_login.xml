@@ -2,14 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activitys.LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:longClickable="false">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/logoApp"
         android:layout_gravity="center"
-        android:src="@drawable/icone" />
+        android:layout_marginTop="25dp"
+        android:src="@drawable/icone_app" />
 
     <EditText
         android:id="@+id/login"
@@ -20,7 +22,8 @@
         android:hint="Digite seu login"
         android:singleLine="true"
         android:imeOptions="actionNext"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:theme="@style/EditTextStyle"/>
 
     <EditText
         android:id="@+id/senha"
@@ -32,7 +35,8 @@
         android:hint="Digite sua senha"
         android:singleLine="true"
         android:imeOptions="actionDone"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:theme="@style/EditTextStyle"/>
 
     <Button
         android:id="@+id/entrar_btn"
