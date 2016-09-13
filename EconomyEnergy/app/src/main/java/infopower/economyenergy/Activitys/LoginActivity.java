@@ -1,4 +1,4 @@
-package infopower.economyenergy.Activitys;
+package infopower.economyenergy.activitys;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;

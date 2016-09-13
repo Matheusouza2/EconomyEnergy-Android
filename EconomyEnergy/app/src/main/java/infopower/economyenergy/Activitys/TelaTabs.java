@@ -1,4 +1,4 @@
-package infopower.economyenergy.Activitys;
+package infopower.economyenergy.activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,7 +42,7 @@ public class TelaTabs extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(TelaTabs.this, SettingsActivity.class);
+        Intent intent = new Intent(TelaTabs.this, ConfiguracoesActivity.class);
         startActivity(intent);
         return true;
     }
