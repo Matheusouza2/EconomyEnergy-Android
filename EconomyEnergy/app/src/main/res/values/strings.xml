@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Economy Energy</string>
+    <string name="action_settings">Configurações</string>
+    <string-array name="nomes_tabs">
+        <item>Consultas</item>
+        <item>Inicio</item>
+        <item>Ações</item>
+    </string-array>
+    <string name="title_activity_tela_tabs">Economy Energy</string>
+    <string name="action_add">Adicionar nova ação</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

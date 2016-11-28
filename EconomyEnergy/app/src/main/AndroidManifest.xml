@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="infopower.economyenergy">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icone"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activitys.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activitys.TelaTabsActivity"
+            android:label="@string/title_activity_tela_tabs"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activitys.ConfiguracoesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activitys.SobreActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activitys.AdicionarNovaAcaoActivity" />
+        <activity android:name=".activitys.RelatorioActivity" />
+        <activity android:name=".activitys.GraficoActivity" />
+        <activity android:name=".activitys.AcoesSalaActivity" />
+        <activity android:name=".fragments.AcaoFragment" />
+        <activity android:name=".activitys.AcaoActivity" />
+        <activity android:name=".activitys.AcoesActivity" />
+        <activity android:name=".activitys.PerfilUsuarioActivity" />
+        <activity android:name=".activitys.MudarSenhaActivity"></activity>
+    </application>
+
+</manifest>
