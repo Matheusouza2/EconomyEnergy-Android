@@ -20,16 +20,31 @@ public class AcoesAdapter extends BaseAdapter {
 
 
     private String[] nome = new String[]
-            {"Sala", "Escritório", "Quarto"};
+            {"Sala de Estar", "Sala de Jantar", "Escritório", "Suíte 1", "Suíte 2", "Quarto 1", "Quarto 2", "Cozinha",
+                    "Area de Serviço", "Banheiro"};
     private String[] descricao = new String[]
-            {"Ações sobre lampadas e tomadas da sala",
-                    "Ações sobre lampadas e tomadas do escritorio",
-                    "Ações sobre lampadas e tomadas do quarto"};
+            {"Ações sobre lampadas e tomadas da Sala de Estar",
+                    "Ações sobre lampadas e tomadas do Sala de Jantar",
+                    "Ações sobre lampadas e tomadas do Escritório",
+                    "Ações sobre lampadas e tomadas da Suíte 1",
+                    "Ações sobre lampadas e tomadas da Suíte 2",
+                    "Ações sobre lampadas e tomadas do Quarto 1",
+                    "Ações sobre lampadas e tomadas do Quarto 2",
+                    "Ações sobre lampadas e tomadas da Cozinha",
+                    "Ações sobre lampadas e tomadas da Area de Serviço",
+                    "Ações sobre lampadas e tomadas da Banheiro"};
 
     private int[] images = new int[]{
             R.drawable.sofa_icn,
+            R.drawable.sofa_icn,
             R.drawable.escritorio_icn,
-            R.drawable.quarto_icn
+            R.drawable.quarto_icn,
+            R.drawable.quarto_icn,
+            R.drawable.quarto_icn,
+            R.drawable.quarto_icn,
+            R.drawable.cozinha_icn,
+            R.drawable.banheiro_icn,
+            R.drawable.banheiro_icn
     };
     private Context context;
 

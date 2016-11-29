@@ -1,7 +1,9 @@
 package infopower.economyenergy.activitys;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,15 +12,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import infopower.economyenergy.R;
+import infopower.economyenergy.dominio.Usuario;
 import infopower.economyenergy.settingsRecycler.DividerItemDecoration;
 import infopower.economyenergy.settingsRecycler.Settings;
 import infopower.economyenergy.settingsRecycler.SettingsAdapter;
@@ -29,8 +34,8 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SettingsAdapter mAdapter;
     private TextView nomeUserLogado;
-    private GridLayout layoutUser;
     private CircleImageView imgUserLogado;
+    private static FileInputStream fis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +49,8 @@ public class ConfiguracoesActivity extends AppCompatActivity {
 
         nomeUserLogado = (TextView)findViewById(R.id.nome_user_logado);
         imgUserLogado = (CircleImageView)findViewById(R.id.img_user_logado);
-        imgUserLogado.setImageResource(R.drawable.user_1);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        layoutUser = (GridLayout)findViewById(R.id.layout_usuario);
-        layoutUser.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ConfiguracoesActivity.this,PerfilUsuarioActivity.class);
-                startActivity(i);
-            }
-        });
 
         mAdapter = new SettingsAdapter(settingsList);
 
@@ -79,11 +75,34 @@ public class ConfiguracoesActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 2:
-                        Toast.makeText(ConfiguracoesActivity.this, "Sair", Toast.LENGTH_SHORT).show();
+                        android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(ConfiguracoesActivity.this).create();
+                        alertDialog.setTitle("Fechando...");
+                        alertDialog.setMessage("Fechar Aplicativo?");
+                        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                               finish();
+                                //Grava a preferencia dizendo que o usuario fez logout
+                                SharedPreferences prefs = getSharedPreferences("logado", 0);
+                                SharedPreferences.Editor editor = prefs.edit();
+                                editor.clear().commit();
+
+                                onBackPressed();
+                            }
+                        });
+                        alertDialog.setIcon(R.drawable.exit);
+                        alertDialog.show();
                         break;
                     default:
                         Toast.makeText(ConfiguracoesActivity.this, "Nada Clicado", Toast.LENGTH_SHORT).show();
                 }
+            }
+
+
+            public void onBackPressed() {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
+                startActivity(intent);
             }
 
             @Override
@@ -106,6 +125,7 @@ public class ConfiguracoesActivity extends AppCompatActivity {
         }));
         prepareMovieData();
     }
+
     private void prepareMovieData() {
         Settings settings = new Settings( "Mudar Senha", "Clique para mudar a senha de usuário", R.drawable.password);
         settingsList.add(settings);
@@ -122,8 +142,19 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        nomeUserLogado.setText("Matheus Souza");
-
+        //Leitura do arquivo com informações do usuario
+        Usuario usuario = null;
+        try {
+            fis = openFileInput("UsuarioLogado");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            usuario = (Usuario) ois.readObject();
+            ois.close();
+            fis.close();
+        }catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        imgUserLogado.setImageResource(R.drawable.user_1);
+        nomeUserLogado.setText(usuario.getNome());
     }
 
     @Override

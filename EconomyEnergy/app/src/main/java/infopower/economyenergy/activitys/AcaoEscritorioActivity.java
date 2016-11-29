@@ -1,8 +1,6 @@
 package infopower.economyenergy.activitys;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,24 +10,22 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import infopower.economyenergy.R;
-import infopower.economyenergy.fragments.AcaoFragment;
 import infopower.economyenergy.webService.ComandoRele;
 
-public class AcoesSalaActivity extends AppCompatActivity {
+public class AcaoEscritorioActivity extends AppCompatActivity {
 
     private Switch tomada1;
+    public static final String PREFS_NAME = "Preferences";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acoes_sala);
-
+        setContentView(R.layout.activity_acao_escritorio);
 
         ActionBar actionBar = getSupportActionBar();
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Tela de Ações");
-
         final ComandoRele comandoRele = new ComandoRele();
         tomada1 = (Switch)findViewById(R.id.switch1);
         tomada1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -41,8 +37,6 @@ public class AcoesSalaActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
         if(savedInstanceState==null){
 

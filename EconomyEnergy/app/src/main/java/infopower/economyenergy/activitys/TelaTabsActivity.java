@@ -22,12 +22,6 @@ public class TelaTabsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_tabs);
 
-       // View decorView = getWindow().getDecorView();
-// Esconde tanto a barra de navegação e a barra de status .
-      //  int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
-         //       | View.SYSTEM_UI_FLAG_VISIBLE;
-      //  decorView.setSystemUiVisibility(uiOptions);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,10 +47,16 @@ public class TelaTabsActivity extends AppCompatActivity {
         if(item.getTitle().equals("Configurações")){
             Intent intent = new Intent(TelaTabsActivity.this, ConfiguracoesActivity.class);
             startActivity(intent);
-        }else if(item.getTitle().equals("Adicionar nova ação")){
-            Intent intent = new Intent(TelaTabsActivity.this, AdicionarNovaAcaoActivity.class);
-            startActivity(intent);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }
     }
 }
