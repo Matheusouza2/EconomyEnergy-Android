@@ -28,5 +28,4 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_tela_tabs" />
-
 </android.support.design.widget.CoordinatorLayout>

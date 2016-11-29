@@ -1,12 +1,8 @@
 package infopower.economyenergy.fragments;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,34 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import infopower.economyenergy.R;
-import infopower.economyenergy.acoesRecycler.Acoes;
 import infopower.economyenergy.acoesRecycler.AcoesAdapter;
 import infopower.economyenergy.activitys.AcaoEscritorioActivity;
 import infopower.economyenergy.activitys.AcaoSalaJantarActivity;
 import infopower.economyenergy.activitys.AcaoSuite1Activity;
 import infopower.economyenergy.activitys.AcoesSalaActivity;
-import infopower.economyenergy.activitys.GraficoActivity;
-import infopower.economyenergy.activitys.RelatorioActivity;
-import infopower.economyenergy.consultasRecycler.Consultas;
-import infopower.economyenergy.consultasRecycler.ConsultasAdapter;
-import infopower.economyenergy.settingsRecycler.RecyclerTouchListener;
 
 /**
  * Created by Mathe on 31/08/2016.
  */
 public class AcoesFragments extends Fragment {
-
-    /*@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

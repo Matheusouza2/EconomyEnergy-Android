@@ -22,6 +22,7 @@
         android:src="@drawable/icone_app"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+
         android:layout_marginTop="130dp"/>
 
     <TextView

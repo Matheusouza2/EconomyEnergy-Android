@@ -37,6 +37,7 @@
         android:inputType="textPassword"
         android:hint="Digite sua senha"
         android:singleLine="true"
+
         android:imeOptions="actionGo"
         android:textAlignment="center"
         android:theme="@style/EditTextStyle"

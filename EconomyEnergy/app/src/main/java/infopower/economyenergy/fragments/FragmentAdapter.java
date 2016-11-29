@@ -14,6 +14,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+
         switch (position) {
             case 0:
                 return new ConsultasFragments();
@@ -35,4 +36,5 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return this.tabTitulos[position];
     }
+
 }

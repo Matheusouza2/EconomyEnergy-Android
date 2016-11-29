@@ -18,11 +18,13 @@
         android:text="InfoPower Tecnology"
         android:textColor="#1c829e"
         android:textSize="15dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email: infopower.tecnology@gmail.com"
         android:layout_marginBottom="20dp"
+
         android:paddingLeft="5dp"
         android:layout_gravity="left"
         android:textSize="12dp"/>

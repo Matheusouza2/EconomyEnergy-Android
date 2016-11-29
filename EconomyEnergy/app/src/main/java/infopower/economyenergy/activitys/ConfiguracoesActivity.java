@@ -1,11 +1,11 @@
 package infopower.economyenergy.activitys;
 
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.GridLayout;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +33,7 @@ import infopower.economyenergy.settingsRecycler.SettingsAdapter;
 import infopower.economyenergy.settingsRecycler.RecyclerTouchListener;
 
 public class ConfiguracoesActivity extends AppCompatActivity {
+
     private List<Settings> settingsList = new ArrayList<>();
     private RecyclerView recyclerView;
     private SettingsAdapter mAdapter;
@@ -53,7 +54,6 @@ public class ConfiguracoesActivity extends AppCompatActivity {
         nomeUserLogado = (TextView)findViewById(R.id.nome_user_logado);
         imgUserLogado = (CircleImageView)findViewById(R.id.img_user_logado);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
 
         mAdapter = new SettingsAdapter(settingsList);
 
@@ -100,7 +100,6 @@ public class ConfiguracoesActivity extends AppCompatActivity {
                 }
             }
 
-
             public void onBackPressed() {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -128,7 +127,6 @@ public class ConfiguracoesActivity extends AppCompatActivity {
         }));
         prepareMovieData();
     }
-
     private void prepareMovieData() {
         Settings settings = new Settings( "Mudar Senha", "Clique para mudar a senha de usuário", R.drawable.password);
         settingsList.add(settings);
